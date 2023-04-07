@@ -1,54 +1,54 @@
 import counterSlice, {
-    allCounterStateSelector,
-    noticountSelector,
-} from "@src/redux/reducers/counterSlice";
+  allCounterStateSelector,
+  noticountSelector,
+} from '@src/redux/reducers/counterSlice'
 import {
-    RootState,
-    useAppDispatch,
-    useAppSelector,
-    wrapper,
-} from "@src/redux/store";
-import { GetServerSideProps, GetServerSidePropsContext } from "next/types";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+  RootState,
+  useAppDispatch,
+  useAppSelector,
+  wrapper,
+} from '@src/redux/store'
+import { GetServerSideProps, GetServerSidePropsContext } from 'next/types'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
 function Home() {
-    const { num, noti } = useSelector(allCounterStateSelector);
+  const { num, noti } = useSelector(allCounterStateSelector)
 
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
-    console.log("state num: ", num);
-    console.log("state noti ", noti);
+  console.log('state num: ', num)
+  console.log('state noti ', noti)
 
-    return (
-        <div>
-            <div>
-                <button
-                    aria-label="Increment value"
-                    onClick={() => dispatch(counterSlice.actions.increase(1))}
-                >
-                    Increment
-                </button>
-                <span>{num}</span>
-                <button
-                    aria-label="Decrement value"
-                    onClick={() => dispatch(counterSlice.actions.decrease(1))}
-                >
-                    Decrement
-                </button>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div>
+        <button
+          aria-label="Increment value"
+          onClick={() => dispatch(counterSlice.actions.increase(1))}
+        >
+          Increment
+        </button>
+        <span>{num}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(counterSlice.actions.decrease(1))}
+        >
+          Decrement
+        </button>
+      </div>
+    </div>
+  )
 }
 
 export const getServerSideProps: GetServerSideProps =
-    wrapper.getServerSideProps((store) => async () => {
-        store.dispatch(counterSlice.actions.increase(1));
-        console.log("State on server counter", store.getState().counter);
+  wrapper.getServerSideProps(store => async () => {
+    store.dispatch(counterSlice.actions.increase(1))
+    console.log('State on server counter', store.getState().counter)
 
-        return {
-            props: {},
-        };
-    });
+    return {
+      props: {},
+    }
+  })
 
 /* export const getServerSideProps = wrapper.getServerSideProps(
   store =>
@@ -65,4 +65,4 @@ export const getServerSideProps: GetServerSideProps =
     },
 )
  */
-export default Home;
+export default Home
