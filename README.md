@@ -37,4 +37,6 @@ git lfs track (file path)
 ex) git lfs track "*.wav"
 ```
 
-# redux RTK(진행중)
+# redux RTK(w진행 완료)
+
+# react query setting(진행 중)

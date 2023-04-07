@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2018",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "esnext.asynciterable"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -14,15 +21,51 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@controller/*": [
+        "controller/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@database/*": [
+        "database/*"
+      ],
+      "@src/*": [
+        "src/*"
+      ],
+      "@pm/*": [
+        "prisma/*"
+      ],
+      "@client/*": [
+        "clients/*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/makepwd.js",
+    "src/theme/index.js",
+    "components/logo.js",
+    "pages/middleware.js",
+    "pages/middleware.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
