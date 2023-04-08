@@ -1,3 +1,5 @@
+'use client'
+
 import userSlice from './../reducers/userSlice'
 import counterSlice from './../reducers/counterSlice'
 import {
@@ -26,6 +28,7 @@ import {
 // export const sagadecreaseAsync = () => ({ type: DECREASE_SAGA_ASYNC });
 
 export function* increaseSaga() {
+  yield console.log('increaseSaga action!')
   yield delay(2000) // 2초를 기다립니다
   // yield put(sagaincrease()); //put은 특정 액션을 디스패치 해줍니다.
   yield put(counterSlice.actions.increase)

@@ -16,6 +16,7 @@ import { getFetchTodos } from '@src/app/ReactQuery/AxiosUsage'
 
 function* watchIncrease() {
   yield takeEvery(counterSlice.actions.increase, function* () {
+    yield console.log('watch increase saga')
     yield delay(1000)
     yield getFetchTodos()
     yield put(counterSlice.actions.decrease(3))
