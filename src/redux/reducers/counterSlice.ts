@@ -49,7 +49,7 @@ const counterSlice = createSlice({
       state.sign_company = action.payload
     },
   },
-  extraReducers: builder =>
+  /*  extraReducers: builder =>
     builder
       .addCase(increaseAsync.pending, (state, action) => {})
       .addCase(increaseAsync.fulfilled, (state, action) => {})
@@ -67,7 +67,7 @@ const counterSlice = createSlice({
         },
       )
 
-      .addDefaultCase((state, action) => {}),
+      .addDefaultCase((state, action) => {}), */
 })
 
 export const {

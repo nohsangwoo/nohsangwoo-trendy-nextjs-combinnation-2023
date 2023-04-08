@@ -1,5 +1,4 @@
 /* // import { getFetchTodos } from './../../page/reactQuery/AxiosUsage'
-import { getFetchTodos } from '@pages/reactQuery/AxiosUsage'
 import {
   delay,
   all,

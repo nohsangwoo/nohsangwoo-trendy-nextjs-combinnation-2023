@@ -47,7 +47,6 @@ const fetchSlice = createSlice({
       state.where = action.payload
     },
   },
-  extraReducers: {},
 })
 
 // create selector
