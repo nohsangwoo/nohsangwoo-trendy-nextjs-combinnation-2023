@@ -58,4 +58,25 @@ ex) git lfs track "*.wav"
 - graphql 적용
 - prisma 적용
 
-# npm install 후 yarn install
+# npm install 후 yarn install (always)
+
+# apply Tailwind CSS
+
+npm install -D tailwindcss postcss autoprefixer
+
+# tailwind/form 적용
+
+클래스명 정렬
+
+- Ref: https://github.com/tailwindlabs/tailwindcss-forms
+
+  `// 요거 두개 설치해야 프리티어랑 연동됨
+
+```
+ $ yarn add -D prettier prettier-plugin-tailwindcss`
+ $ npm i -D @tailwindcss/forms
+
+```
+
+- tailwind.config.js에 추가
+  require('@tailwindcss/forms'
