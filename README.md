@@ -40,3 +40,8 @@ ex) git lfs track "*.wav"
 # redux RTK(w진행 완료)
 
 # react query setting(진행 중)
+
+# react query 와 redux 사용시 주의사항
+
+- 상단에 'use client'를 사용해야한다.(당연히 클라이언트 사이드에서 렌더링 되니깐.)
+  app directory는 기본적으로 서버에서 렌더링 된다.
