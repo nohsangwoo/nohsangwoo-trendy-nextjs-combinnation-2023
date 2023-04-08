@@ -10,10 +10,10 @@ import {
   useAppSelector,
   wrapper,
 } from '@src/redux/store'
-import { GetServerSideProps, GetServerSidePropsContext } from 'next/types'
+import { GetServerSideProps } from 'next/types'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
-function Home() {
+function ReduxUsage() {
   const { num, noti } = useSelector(allCounterStateSelector)
 
   const dispatch = useAppDispatch()
@@ -31,6 +31,7 @@ function Home() {
           Increment
         </button>
         <span>{num}</span>
+
         <button
           aria-label="Decrement value"
           onClick={() => dispatch(counterSlice.actions.decrease(1))}
@@ -42,7 +43,7 @@ function Home() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps =
+/* export const getServerSideProps: GetServerSideProps =
   wrapper.getServerSideProps(store => async () => {
     store.dispatch(counterSlice.actions.increase(1))
     console.log('State on server counter', store.getState().counter)
@@ -51,7 +52,7 @@ export const getServerSideProps: GetServerSideProps =
       props: {},
     }
   })
-
+ */
 /* export const getServerSideProps = wrapper.getServerSideProps(
   store =>
     async ({ params }) => {
@@ -67,4 +68,5 @@ export const getServerSideProps: GetServerSideProps =
     },
 )
  */
-export default Home
+
+export default ReduxUsage

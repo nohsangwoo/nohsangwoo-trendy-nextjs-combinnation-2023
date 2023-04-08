@@ -1,5 +1,3 @@
-'use client'
-
 import { all, call } from 'redux-saga/effects'
 import { counterSaga } from './sagaCounter'
 import { initSaga } from './sagaInit'

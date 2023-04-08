@@ -37,11 +37,25 @@ git lfs track (file path)
 ex) git lfs track "*.wav"
 ```
 
-# redux RTK(w진행 완료)
+# redux RTK(진행 완료)
 
-# react query setting(진행 중)
+# react query setting(진행 완료)
 
 # react query 와 redux 사용시 주의사항
 
 - 상단에 'use client'를 사용해야한다.(당연히 클라이언트 사이드에서 렌더링 되니깐.)
   app directory는 기본적으로 서버에서 렌더링 된다.
+
+- fetching 영역과 hook 영역은 따로 관리 한다.
+  (서버 컴포넌트냐(default) or 클라이언트 컴포넌트냐(use сlient)
+
+# todo
+
+- redux rtk 적용
+- react query 적용
+- tailwind css 적용
+- db 연동
+- graphql 적용
+- prisma 적용
+
+# npm install 후 yarn install

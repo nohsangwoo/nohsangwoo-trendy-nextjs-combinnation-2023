@@ -1,5 +1,3 @@
-'use client'
-
 import userSlice from './../reducers/userSlice'
 import counterSlice from './../reducers/counterSlice'
 import {

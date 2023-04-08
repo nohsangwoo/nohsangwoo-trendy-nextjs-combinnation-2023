@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import ReduxUsage from "./ReduxUsage/page";
+import Image from 'next/image'
+import ReduxUsage from './ReduxUsage/page'
 
 export default function Home() {
-    return (
-        <main>
-            <ReduxUsage />
-        </main>
-    );
+  return (
+    <main>
+      <ReduxUsage />
+    </main>
+  )
 }
