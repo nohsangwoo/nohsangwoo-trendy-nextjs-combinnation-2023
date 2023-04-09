@@ -49,15 +49,6 @@ ex) git lfs track "*.wav"
 - fetching 영역과 hook 영역은 따로 관리 한다.
   (서버 컴포넌트냐(default) or 클라이언트 컴포넌트냐(use сlient)
 
-# todo
-
-- redux rtk 적용
-- react query 적용
-- tailwind css 적용
-- db 연동
-- graphql 적용
-- prisma 적용
-
 # npm install 후 yarn install (always)
 
 # apply Tailwind CSS
@@ -80,3 +71,18 @@ npm install -D tailwindcss postcss autoprefixer
 
 - tailwind.config.js에 추가
   require('@tailwindcss/forms'
+
+# google zx project
+
+- node단에서 쉘스크립트를 구동할 수 있게 해주는 라이브러리
+- ref: https://github.com/google/zx
+- ref: https://www.npmjs.com/package/zx
+
+# todo
+
+- redux rtk 적용
+- react query 적용
+- tailwind css 적용
+- db 연동
+- graphql 적용
+- prisma 적용
