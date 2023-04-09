@@ -78,11 +78,12 @@ npm install -D tailwindcss postcss autoprefixer
 - ref: https://github.com/google/zx
 - ref: https://www.npmjs.com/package/zx
 
+# prisma 적용완료(db연동)
+
 # todo
 
 - redux rtk 적용
 - react query 적용
 - tailwind css 적용
-- db 연동
+- prisma 적용(db 연동)
 - graphql 적용
-- prisma 적용
