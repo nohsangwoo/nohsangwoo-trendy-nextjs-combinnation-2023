@@ -34,3 +34,19 @@ model User {
   Post    Post[]
   Profile Profile?
 }
+
+model Novel {
+  id       String   @id @default(uuid())
+  title    String
+  image    String?
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  author   Author[]
+}
+
+model Author {
+  id      String  @id @default(uuid())
+  name    String
+  Novel   Novel?  @relation(fields: [novelId], references: [id])
+  novelId String?
+}

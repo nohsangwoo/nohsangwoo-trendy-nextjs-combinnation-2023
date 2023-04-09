@@ -80,6 +80,8 @@ npm install -D tailwindcss postcss autoprefixer
 
 # prisma 적용완료(db연동)
 
+- ref: https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices
+
 # todo
 
 - redux rtk 적용
@@ -87,3 +89,14 @@ npm install -D tailwindcss postcss autoprefixer
 - tailwind css 적용
 - prisma 적용(db 연동)
 - graphql 적용
+
+# graphql 적용
+
+1. ref: https://www.apollographql.com/docs/apollo-server/getting-started/
+2. ref: https://github.com/apollo-server-integrations/apollo-server-integration-next
+
+3. tosos
+
+- 스키마랑 리졸버를 도메인 관리하자.(with @graphql-tools/merge)
+- client에서 graphql 페칭 방법(with react-query or apollo client)
+- graphql-codegen 적용
