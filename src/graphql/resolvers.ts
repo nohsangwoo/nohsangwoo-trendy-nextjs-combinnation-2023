@@ -1,6 +1,6 @@
 import { Context } from './types.d'
 export const resolvers = {
-  Query: {
+ /*  Query: {
     novels: async (parent: any, args: any, context: Context) => {
       return await context.prisma.novel.findMany({})
     },
@@ -11,7 +11,7 @@ export const resolvers = {
         },
       })
     },
-  },
+  }, */
   Novel: {
     authors: async (parent: any, args: any, context: Context) => {
       return await context.prisma.author.findMany({

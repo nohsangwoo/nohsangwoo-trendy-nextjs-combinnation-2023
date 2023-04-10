@@ -3,12 +3,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2018",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "esnext.asynciterable"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "esnext.asynciterable"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -23,30 +18,14 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@components/*": [
-        "components/*"
-      ],
-      "@controller/*": [
-        "controller/*"
-      ],
-      "@config/*": [
-        "config/*"
-      ],
-      "@database/*": [
-        "database/*"
-      ],
-      "@src/*": [
-        "src/*"
-      ],
-      "@pm/*": [
-        "prisma/*"
-      ],
-      "@client/*": [
-        "clients/*"
-      ]
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
+      "@controller/*": ["controller/*"],
+      "@config/*": ["config/*"],
+      "@database/*": ["database/*"],
+      "@src/*": ["src/*"],
+      "@pm/*": ["prisma/*"],
+      "@client/*": ["clients/*"]
     },
     "plugins": [
       {
@@ -64,9 +43,8 @@
     "components/logo.js",
     "pages/middleware.js",
     "pages/middleware.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/graphql/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

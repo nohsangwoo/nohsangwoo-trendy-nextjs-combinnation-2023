@@ -1,31 +1,18 @@
-import gql from 'graphql-tag'
+import path from 'path'
+import { loadFilesSync } from '@graphql-tools/load-files'
+import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge'
+import { makeExecutableSchema } from '@graphql-tools/schema'
+import { resolvers } from '@src/graphql/resolvers'
+import novelResover from '@src/graphql/resolvers/novel.resolvers'
+import novelsResover from '@src/graphql/resolvers/novels.resolvers'
 
-export const typeDefs = gql`
-  type Novel {
-    id: ID!
-    title: String
-    image: String
-    createdAt: String
-    updatedAt: String
-    authors: [Author]
-  }
 
-  type Author {
-    id: ID!
-    name: String
-    novelID: String
-  }
+// 소환되는 graphqlServer기준으로 경로가 잡히기 때문에 graphqlServer 경로를 기준으로 지정한다.
+const resolversPath = path.join(process.cwd(), '/src/graphql/resolvers')
 
-  type Query {
-    novels: [Novel]
-    novel(id: ID!): Novel
-  }
+// const loadedResolvers = loadFilesSync(resolversPath)
 
-  type Mutation {
-    AddNovel(image: String, title: String): Novel
-    updateNovel(id: ID!, title: String, image: String): Novel
-    deleteNovel(id: ID!): Novel
-    addAuthor(novelId: ID!, name: String): Author
-    deleteAuthor(id: ID!): Author
-  }
-`
+const mergedResolvers = mergeResolvers([resolvers, novelResover, novelsResover])
+// const mergedResolvers = mergeResolvers(loadedResolvers)
+
+export default mergedResolvers

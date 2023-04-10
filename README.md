@@ -100,3 +100,33 @@ npm install -D tailwindcss postcss autoprefixer
 - 스키마랑 리졸버를 도메인 관리하자.(with @graphql-tools/merge)
 - client에서 graphql 페칭 방법(with react-query or apollo client)
 - graphql-codegen 적용
+
+# graphql-codegen 적용
+
+- (graphql api type을 자동으로 생성해줌)
+- ref: https://www.graphql-code-generator.com/docs/getting-started/installation
+
+npm i -E @graphql-tools/load-files @graphql-tools/schema @graphql-tools/merge --legacy-peer-deps
+
+# Cannot use import statement outside a module with(@graphql-tools/load-files)
+
+- next.config.js에 아래 코드 추가
+
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  env: {
+    ROOT: __dirname,
+  },
+  <!-- 이거 추가 -->
+  transpilePackages: ['@graphql-tools/load-files'],
+}
+
+module.exports = nextConfig
+
+```
+
+# operation not permitted, scandir 'C:/Users/Default User'
