@@ -44,7 +44,8 @@
     "pages/middleware.js",
     "pages/middleware.ts",
     ".next/types/**/*.ts",
-    "src/graphql/**/*.ts"
+    "src/graphql/**/*.ts",
+    "yml-types.d.ts"
   ],
   "exclude": ["node_modules"]
 }

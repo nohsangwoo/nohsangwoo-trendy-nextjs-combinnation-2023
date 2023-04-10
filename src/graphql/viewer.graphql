@@ -1,0 +1,35 @@
+# import Partial from './partial.graphql'
+""" 
+query Viewer {
+  viewer {
+    ...Partial
+    status
+  }
+}
+ """
+query Novel {
+  novel {
+    id
+    title
+    image
+    createdAt
+    updatedAt
+  }
+}
+query Novels {
+  novels {
+    id
+    title
+    image
+    createdAt
+    updatedAt
+  }
+}
+
+""" mutation UpdateName($name: String!) {
+  updateName(name: $name) {
+    id
+    name
+    status
+  }
+} """

@@ -106,7 +106,7 @@ npm install -D tailwindcss postcss autoprefixer
 - (graphql api type을 자동으로 생성해줌)
 - ref: https://www.graphql-code-generator.com/docs/getting-started/installation
 
-npm i -E @graphql-tools/load-files @graphql-tools/schema @graphql-tools/merge --legacy-peer-deps
+npm i -E @graphql-tools/load-files @graphql-tools/schema @graphql-tools/merge @graphql-codegen/typescript-react-apollo graphql-let --legacy-peer-deps
 
 # Cannot use import statement outside a module with(@graphql-tools/load-files)
 
@@ -130,3 +130,11 @@ module.exports = nextConfig
 ```
 
 # operation not permitted, scandir 'C:/Users/Default User'
+
+# graplql
+
+- --legacy-peer-deps
+
+# yaml-loader 설치해야 함.
+
+npm i -D yaml-loader --legacy-peer-deps
