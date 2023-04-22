@@ -9,16 +9,10 @@ export const typeDefs = gql`
     updatedAt: String
     authors: [Author]
   }
-
   type Author {
     id: ID!
     name: String
     novelID: String
-  }
-
-  type Query {
-    novels: [Novel]
-    novel(id: ID!): Novel
   }
 
   type Mutation {
