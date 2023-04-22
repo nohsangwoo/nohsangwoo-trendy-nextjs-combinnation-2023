@@ -16,7 +16,6 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    addAuthor(novelId: ID!, name: String): Author
     deleteAuthor(id: ID!): Author
   }
 `

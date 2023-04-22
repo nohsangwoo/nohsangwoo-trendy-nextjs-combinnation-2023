@@ -12,14 +12,7 @@ export const resolvers = {
 
   Mutation: {
    
-    addAuthor: async (parent: any, args: any, context: Context) => {
-      return await context.prisma.author.create({
-        data: {
-          novelId: args.novelId,
-          name: args.name,
-        },
-      })
-    },
+    
 
     deleteAuthor: async (parent: any, args: any, context: Context) => {
       return await context.prisma.author.delete({

@@ -5,23 +5,25 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 import { resolvers as allResolvers } from '@src/graphql/resolvers'
 import { join, resolve } from 'path'
 
-import novelResover from '@src/graphql/novel/novel.resolvers'
+import novelResovers from '@src/graphql/novel/novel.resolvers'
 import novelTypeDefs from '@src/graphql/novel/novel.typeDefs'
 
-import novelsResover from '@src/graphql/novels/novels.resolvers'
+import novelsResovers from '@src/graphql/novels/novels.resolvers'
 import novelsTypeDefs from '@src/graphql/novels/novels.typeDefs'
 
-import addNovelResolver from '@src/graphql/addNovel/addNovel.resolvers'
+import addNovelResolvers from '@src/graphql/addNovel/addNovel.resolvers'
 import addNovelTypeDefs from '@src/graphql/addNovel/addNovel.typeDefs'
 
-import updateNovelResolver from '@src/graphql/updateNovel/updateNovel.resolvers'
+import updateNovelResolvers from '@src/graphql/updateNovel/updateNovel.resolvers'
 import updateNovelTypeDefs from '@src/graphql/updateNovel/updateNovel.typeDefs'
 
-import deleteNovelResolver from '@src/graphql/deleteNovel/deleteNovel.resolvers'
+import deleteNovelResolvers from '@src/graphql/deleteNovel/deleteNovel.resolvers'
 import deleteNovelTypeDefs from '@src/graphql/deleteNovel/deleteNovel.typeDefs'
 
-import { typeDefs as AllTypeDefs } from '@src/graphql/typeDefs'
+import addAuthorResolvers from '@src/graphql/addAuthor/addAuthor.resolvers'
+import addAuthorTypeDefs from '@src/graphql/addAuthor/addAuthor.typeDefs'
 
+import { typeDefs as AllTypeDefs } from '@src/graphql/typeDefs'
 // import graphQLLetConfig from '../../'
 // 소환되는 graphqlServer기준으로 경로가 잡히기 때문에 graphqlServer 경로를 기준으로 지정한다.
 console.log(' path.resolve()', resolve())
@@ -43,11 +45,12 @@ const rootPath = resolve()
 // const mergedTypeDefs = mergeTypeDefs(loadedFiles)
 
 export const resolvers = mergeResolvers([
-  novelResover,
-  novelsResover,
-  addNovelResolver,
-  updateNovelResolver,
-  deleteNovelResolver,
+  novelResovers,
+  novelsResovers,
+  addNovelResolvers,
+  updateNovelResolvers,
+  deleteNovelResolvers,
+  addAuthorResolvers,
   allResolvers,
 ])
 
@@ -57,6 +60,7 @@ export const typeDefs = mergeTypeDefs([
   addNovelTypeDefs,
   updateNovelTypeDefs,
   deleteNovelTypeDefs,
+  addAuthorTypeDefs,
   AllTypeDefs,
 ])
 
