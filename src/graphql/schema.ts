@@ -17,6 +17,9 @@ import addNovelTypeDefs from '@src/graphql/addNovel/addNovel.typeDefs'
 import updateNovelResolver from '@src/graphql/updateNovel/updateNovel.resolvers'
 import updateNovelTypeDefs from '@src/graphql/updateNovel/updateNovel.typeDefs'
 
+import deleteNovelResolver from '@src/graphql/deleteNovel/deleteNovel.resolvers'
+import deleteNovelTypeDefs from '@src/graphql/deleteNovel/deleteNovel.typeDefs'
+
 import { typeDefs as AllTypeDefs } from '@src/graphql/typeDefs'
 
 // import graphQLLetConfig from '../../'
@@ -43,6 +46,8 @@ export const resolvers = mergeResolvers([
   novelResover,
   novelsResover,
   addNovelResolver,
+  updateNovelResolver,
+  deleteNovelResolver,
   allResolvers,
 ])
 
@@ -50,6 +55,8 @@ export const typeDefs = mergeTypeDefs([
   novelTypeDefs,
   novelsTypeDefs,
   addNovelTypeDefs,
+  updateNovelTypeDefs,
+  deleteNovelTypeDefs,
   AllTypeDefs,
 ])
 
