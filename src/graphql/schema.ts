@@ -6,9 +6,16 @@ import { resolvers as allResolvers } from '@src/graphql/resolvers'
 import { join, resolve } from 'path'
 
 import novelResover from '@src/graphql/novel/novel.resolvers'
-import novelTypeDefs from './novel/novel.typeDefs'
+import novelTypeDefs from '@src/graphql/novel/novel.typeDefs'
 
 import novelsResover from '@src/graphql/novels/novels.resolvers'
+import novelsTypeDefs from '@src/graphql/novels/novels.typeDefs'
+
+import addNovelResolver from '@src/graphql/addNovel/addNovel.resolvers'
+import addNovelTypeDefs from '@src/graphql/addNovel/addNovel.typeDefs'
+
+import updateNovelResolver from '@src/graphql/updateNovel/updateNovel.resolvers'
+import updateNovelTypeDefs from '@src/graphql/updateNovel/updateNovel.typeDefs'
 
 import { typeDefs as AllTypeDefs } from '@src/graphql/typeDefs'
 
@@ -35,10 +42,16 @@ const rootPath = resolve()
 export const resolvers = mergeResolvers([
   novelResover,
   novelsResover,
+  addNovelResolver,
   allResolvers,
 ])
 
-export const typeDefs = mergeTypeDefs([novelTypeDefs, AllTypeDefs])
+export const typeDefs = mergeTypeDefs([
+  novelTypeDefs,
+  novelsTypeDefs,
+  addNovelTypeDefs,
+  AllTypeDefs,
+])
 
 export const schema = makeExecutableSchema({
   resolvers,

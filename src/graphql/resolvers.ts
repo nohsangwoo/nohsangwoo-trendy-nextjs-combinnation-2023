@@ -1,17 +1,5 @@
 import { Context } from './types.d'
 export const resolvers = {
- /*  Query: {
-    novels: async (parent: any, args: any, context: Context) => {
-      return await context.prisma.novel.findMany({})
-    },
-    novel: async (parent: any, args: any, context: Context) => {
-      return await context.prisma.novel.findUnique({
-        where: {
-          id: args.id,
-        },
-      })
-    },
-  }, */
   Novel: {
     authors: async (parent: any, args: any, context: Context) => {
       return await context.prisma.author.findMany({
@@ -23,25 +11,6 @@ export const resolvers = {
   },
 
   Mutation: {
-    AddNovel: async (parent: any, args: any, context: Context) => {
-      return await context.prisma.novel.create({
-        data: {
-          title: args.title,
-          image: args.image,
-        },
-      })
-    },
-    updateNovel: async (parent: any, args: any, context: Context) => {
-      return await context.prisma.novel.update({
-        where: {
-          id: args.id,
-        },
-        data: {
-          title: args.title,
-          image: args.image,
-        },
-      })
-    },
     deleteNovel: async (parent: any, args: any, context: Context) => {
       return await context.prisma.novel.delete({
         where: {
