@@ -2,8 +2,8 @@ import path from 'path'
 import { loadFilesSync } from '@graphql-tools/load-files'
 import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge'
 import { makeExecutableSchema } from '@graphql-tools/schema'
-import { resolvers } from '@src/graphql/resolvers'
-import novelResover from '@src/graphql/resolvers/novel.resolvers'
+import { resolvers as allResolvers } from '@src/graphql/resolvers'
+import novelResover from '@src/graphql/novel/novel.resolvers'
 import novelsResover from '@src/graphql/resolvers/novels.resolvers'
 
 // import graphQLLetConfig from '../../'
@@ -12,7 +12,10 @@ const resolversPath = path.join(process.cwd(), '/src/graphql/resolvers')
 
 // const loadedResolvers = loadFilesSync(resolversPath)
 
-const mergedResolvers = mergeResolvers([resolvers, novelResover, novelsResover])
-// const mergedResolvers = mergeResolvers(loadedResolvers)
+export const resolvers = mergeResolvers([
+  allResolvers,
+  novelResover,
+  novelsResover,
+])
 
-export default mergedResolvers
+export default {}

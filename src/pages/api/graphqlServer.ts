@@ -10,13 +10,13 @@ import { join, resolve } from 'path'
 
 // const resolverFiles = loadFilesSync(path)
 
-import { resolvers } from '@src/graphql/resolvers'
-import novelResover from '@src/graphql/resolvers/novel.resolvers'
+import novelResover from '@src/graphql/novel/novel.resolvers'
 import novelsResover from '@src/graphql/resolvers/novels.resolvers'
 import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge'
 import { loadFilesSync } from '@graphql-tools/load-files'
 import graphQLLetConfig from '../../../.graphql-let.yml'
 import { makeExecutableSchema } from '@graphql-tools/schema'
+import { resolvers } from '@src/graphql/schema'
 // const resolversPath = path.join(process.cwd(), '/src/graphql/resolvers')
 
 console.log(' path.resolve()', resolve())
@@ -35,15 +35,15 @@ const rootPath = resolve()
 
 // const loadedResolvers = loadFilesSync(resolversPath)
 
-const loadedFiles = loadFilesSync(
-  join(process.cwd(), 'src/graphql/**/*.typeDefs.ts'),
-)
-const mergedTypeDefs = mergeTypeDefs(loadedFiles)
+// const loadedFiles = loadFilesSync(
+//   join(process.cwd(), 'src/graphql/**/*.typeDefs.ts'),
+// )
+// const mergedTypeDefs = mergeTypeDefs(loadedFiles)
 
-const mergedResolvers = mergeResolvers([resolvers, novelResover, novelsResover])
+// const mergedResolvers = mergeResolvers([resolvers, novelResover, novelsResover])
 
 export const schema = makeExecutableSchema({
-  resolvers: mergedResolvers,
+  resolvers,
   typeDefs,
 })
 
