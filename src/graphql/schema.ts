@@ -2,7 +2,6 @@ import path from 'path'
 import { loadFilesSync } from '@graphql-tools/load-files'
 import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge'
 import { makeExecutableSchema } from '@graphql-tools/schema'
-import { resolvers as allResolvers } from '@src/graphql/resolvers'
 import { join, resolve } from 'path'
 
 import novelResovers from '@src/graphql/novel/novel.resolvers'
@@ -23,7 +22,12 @@ import deleteNovelTypeDefs from '@src/graphql/deleteNovel/deleteNovel.typeDefs'
 import addAuthorResolvers from '@src/graphql/addAuthor/addAuthor.resolvers'
 import addAuthorTypeDefs from '@src/graphql/addAuthor/addAuthor.typeDefs'
 
-import { typeDefs as AllTypeDefs } from '@src/graphql/typeDefs'
+import deleteAuthorResolvers from '@src/graphql/deleteAuthor/deleteAuthor.resolvers'
+import deleteAuthorTypeDefs from '@src/graphql/deleteAuthor/deleteAuthor.typeDefs'
+
+import { resolvers as utisResolvers } from '@src/graphql/utils.resolvers'
+import { typeDefs as utisTypeDefs } from '@src/graphql/typeDefs'
+
 // import graphQLLetConfig from '../../'
 // 소환되는 graphqlServer기준으로 경로가 잡히기 때문에 graphqlServer 경로를 기준으로 지정한다.
 console.log(' path.resolve()', resolve())
@@ -51,7 +55,8 @@ export const resolvers = mergeResolvers([
   updateNovelResolvers,
   deleteNovelResolvers,
   addAuthorResolvers,
-  allResolvers,
+  deleteAuthorResolvers,
+  utisResolvers,
 ])
 
 export const typeDefs = mergeTypeDefs([
@@ -61,7 +66,8 @@ export const typeDefs = mergeTypeDefs([
   updateNovelTypeDefs,
   deleteNovelTypeDefs,
   addAuthorTypeDefs,
-  AllTypeDefs,
+  deleteAuthorTypeDefs,
+  utisTypeDefs,
 ])
 
 export const schema = makeExecutableSchema({
